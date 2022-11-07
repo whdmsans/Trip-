@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     Button btn_1, btn_2, btn_3, btn_4, btn_5;
     private long backBtnTime = 0;
 
-    // test용
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
