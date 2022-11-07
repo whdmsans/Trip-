@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+<!--홈 화면-->
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+    </FrameLayout>
+<!--화면 밑에 UI-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+<!--캘린더 버튼-->
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="캘린더"/>
+<!--검색 버튼-->
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="검색"/>
+<!--홈 버튼-->
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="홈"/>
+<!--친구 버튼-->
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="친구"/>
+<!--설정 버튼-->
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="설정"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
