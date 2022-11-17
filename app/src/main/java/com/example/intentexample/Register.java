@@ -2,6 +2,7 @@ package com.example.intentexample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ public class Register extends AppCompatActivity {
     private EditText et_id, et_pass, et_name, et_email;
     private Button btn_register;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +35,7 @@ public class Register extends AppCompatActivity {
         et_email = findViewById(R.id.et_email);
 
         // 회원가입 버튼 클릭 시 수행
-        btn_register = findViewById(R.id.btn_registera);
+        btn_register = findViewById(R.id.btn_register);
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

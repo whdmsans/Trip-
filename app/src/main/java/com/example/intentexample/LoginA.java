@@ -21,7 +21,7 @@ import org.json.JSONObject;
 public class LoginA extends AppCompatActivity {
 
     private EditText et_id, et_pass;
-    private Button btn_login, btn_register;
+    private Button btn_login, btn_registera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +31,10 @@ public class LoginA extends AppCompatActivity {
         et_id = findViewById(R.id.et_ida);
         et_pass = findViewById(R.id.et_passa);
         btn_login = findViewById(R.id.btn_login);
-        btn_register = findViewById(R.id.btn_registera);
+        btn_registera = findViewById(R.id.btn_registera);
 
         // 회원가입 버튼 클릭 시 수행
-        btn_register.setOnClickListener(new View.OnClickListener() {
+        btn_registera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginA.this, Register.class);
