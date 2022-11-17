@@ -39,9 +39,9 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 // EditText에 현재 입력되어 있는 값을 가져온다.
                 String userID = et_id.getText().toString();
-                String userpass = et_pass.getText().toString();
-                String username = et_name.getText().toString();
-                String useremail = et_email.getText().toString();
+                String userPass = et_pass.getText().toString();
+                String userName = et_name.getText().toString();
+                String userEmail = et_email.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -63,7 +63,7 @@ public class Register extends AppCompatActivity {
                     }
                 };
                 // 서버로 Volley를 이용해 요청
-                RegisterRequest registerRequest = new RegisterRequest(userID, userpass, username, useremail, responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(userID, userPass, userName, userEmail, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(Register.this);
                 queue.add(registerRequest);
             }
