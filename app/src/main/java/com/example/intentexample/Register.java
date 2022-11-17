@@ -30,7 +30,7 @@ public class Register extends AppCompatActivity {
 
         // 아이디 값 찾아주기
         et_id = findViewById(R.id.et_id);
-        et_pass = findViewById(R.id.et_passa);
+        et_pass = findViewById(R.id.et_pass);
         et_name = findViewById(R.id.et_name);
         et_email = findViewById(R.id.et_email);
 
@@ -53,7 +53,7 @@ public class Register extends AppCompatActivity {
                             boolean success = jsonObject.getBoolean("success");
                             if (success){ // 회원가입 성공
                                 Toast.makeText(getApplicationContext(), "회원가입 성공", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(Register.this, Login.class);
+                                Intent intent = new Intent(Register.this, LoginA.class);
                                 startActivity(intent);
                             }else{ // 회원가입 실패
                                 Toast.makeText(getApplicationContext(), "회원가입 실패", Toast.LENGTH_SHORT).show();
