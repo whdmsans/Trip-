@@ -62,7 +62,6 @@ public class LoginA extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginA.this, MainActivity.class); // MainActivity로 수정
                                 intent.putExtra("userID", userID);
-                                intent.putExtra("userPass", userPass);
                                 startActivity(intent);
                             }else{ // 로그인 실패
                                 Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();

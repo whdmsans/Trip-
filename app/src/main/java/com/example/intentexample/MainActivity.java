@@ -2,12 +2,20 @@ package com.example.intentexample;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
     // 날짜 변수
     private TextView date;
 
+    // 드로워 변수
+    private DrawerLayout drawerLayout;
+    private View drawerView;
+    
+    // 드로워 추가 변수
+    private TextView tv_id, tv_email;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +58,40 @@ public class MainActivity extends AppCompatActivity {
         //날짜 변수 연결 및 출력
         date = findViewById(R.id.Date);
         date.setText(getTime());
+
+        // 드로워 변수 연결
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawerView = (View)findViewById(R.id.drawer);
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+        
+        // open 버튼 작동
+        ImageView open = (ImageView)findViewById(R.id.open);
+        open.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                drawerLayout.openDrawer(Gravity.RIGHT);
+                return false;
+            }
+        });
+
+        // close 버튼 작동
+        ImageView close = (ImageView)findViewById(R.id.close);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.closeDrawers();
+            }
+        });
+
+        // 추가 상황 설정
+        drawerLayout.setDrawerListener(listener);
+        drawerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return true;
+            }
+        });
+
 
         // 버튼에 따른 화면 설정
         bottomNavigationView = findViewById(R.id.bottom_navi);
@@ -84,6 +134,38 @@ public class MainActivity extends AppCompatActivity {
 
         return getTime;
     }
+
+    // 드로워 함수
+    DrawerLayout.DrawerListener listener = new DrawerLayout.DrawerListener() {
+        @Override
+        public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+            // 드로워 추가 변수 연결 및 값 설정
+            tv_id = findViewById(R.id.userID);
+            tv_email = findViewById(R.id.userEmail);
+
+            Intent intent = getIntent();
+            String userID = intent.getStringExtra("userID");
+            String userEmail = intent.getStringExtra("userEmail");
+
+            tv_id.setText(userID);
+//            tv_email.setText(userEmail);
+        }
+
+        @Override
+        public void onDrawerOpened(@NonNull View drawerView) {
+
+        }
+
+        @Override
+        public void onDrawerClosed(@NonNull View drawerView) {
+
+        }
+
+        @Override
+        public void onDrawerStateChanged(int newState) {
+
+        }
+    };
 
     // 화면 교체 실행문
     private void setFrag(int n){
