@@ -9,15 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right">
-        <!--수정 버튼-->
-        <Button
-            android:id="@+id/btn_R"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="수정" />
-
-    </LinearLayout>
+        android:gravity="right"/>
     <!--    지도 그림-->
     <ImageView
         android:layout_width="match_parent"

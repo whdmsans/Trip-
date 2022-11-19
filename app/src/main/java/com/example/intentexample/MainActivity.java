@@ -5,15 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,10 +31,17 @@ public class MainActivity extends AppCompatActivity {
     //뒤로가기 버튼 변수
     private long backBtnTime = 0;
 
+    // 날짜 변수
+    private TextView date;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //날짜 변수 연결 및 출력
+        date = findViewById(R.id.Date);
+        date.setText(getTime());
 
         // 버튼에 따른 화면 설정
         bottomNavigationView = findViewById(R.id.bottom_navi);
@@ -64,6 +73,16 @@ public class MainActivity extends AppCompatActivity {
         friends = new Friends();
         setFrag(2); // 첫 화면을 선택
 
+    }
+
+    // 현재 날짜 함수
+    private String getTime() {
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd(EE)", Locale.KOREAN);
+        String getTime = dateFormat.format(date);
+
+        return getTime;
     }
 
     // 화면 교체 실행문
