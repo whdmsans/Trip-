@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fm;
     private FragmentTransaction ft;
     private Calendar calendar;
-    private Search search;
     private Home home;
     private Friends friends;
 
@@ -102,14 +101,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_calendar:
                         setFrag(0);
                         break;
-                    case R.id.action_search:
+                    case R.id.action_map:
                         setFrag(1);
                         break;
-                    case R.id.action_map:
-                        setFrag(2);
-                        break;
                     case R.id.action_friends:
-                        setFrag(3);
+                        setFrag(2);
                         break;
                 }
                 return true;
@@ -118,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
 
         // 각 화면 연결
         calendar = new Calendar();
-        search = new Search();
         home = new Home();
         friends = new Friends();
         setFrag(2); // 첫 화면을 선택
@@ -177,22 +172,17 @@ public class MainActivity extends AppCompatActivity {
                 ft.commit();
                 break;
             case 1:
-                ft.replace(R.id.main_frame, search);
-                ft.commit();
-                break;
-            case 2:
                 ft.replace(R.id.main_frame, home);
                 ft.commit();
                 break;
-            case 3:
+            case 2:
                 ft.replace(R.id.main_frame, friends);
                 ft.commit();
                 break;
         }
     }
 
-
-//뒤로가기 버튼 2번 눌러서 종료
+    //뒤로가기 버튼 2번 눌러서 종료
     @Override
     public void onBackPressed() {
         long curTime = System.currentTimeMillis();
