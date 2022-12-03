@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IntentExample"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        tools:replace="android:appComponentFactory"
+        android:appComponentFactory="whateverString">
         <activity
             android:name=".LoginA"
             android:exported="true">
@@ -79,6 +81,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="mh06df2rc9" />
     </application>
 
 </manifest>
