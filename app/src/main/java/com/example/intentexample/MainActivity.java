@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         calendar = new Calendar();
         home = new Home();
         friends = new Friends();
-        setFrag(2); // 첫 화면을 선택
+        setFrag(1); // 첫 화면을 선택
 
     }
 
