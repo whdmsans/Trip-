@@ -40,13 +40,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Login"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Option"
             android:exported="false">
             <meta-data
@@ -55,13 +48,6 @@
         </activity>
         <activity
             android:name=".Friends"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Search"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
