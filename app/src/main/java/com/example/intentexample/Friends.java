@@ -66,8 +66,8 @@ public class Friends extends Fragment {
             }
         });
 
-        adapter = new CustomAdapter(arrayList, getActivity());
-        recyclerView.setAdapter(adapter);
+//        adapter = new CustomAdapter(arrayList, getActivity());
+//        recyclerView.setAdapter(adapter);
 
         return view;
     }

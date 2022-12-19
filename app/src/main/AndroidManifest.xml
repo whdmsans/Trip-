@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-<!--인터넷 권한 선언-->
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-<!--지도 권한 선언-->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 인터넷 권한 선언 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 지도 권한 선언 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="whateverString"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -18,11 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IntentExample"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31"
         tools:replace="android:appComponentFactory"
-        android:appComponentFactory="whateverString">
+        tools:targetApi="31">
         <activity
-            android:name=".LoginA"
+            android:name=".LoginActivity"
             android:exported="true">
 
             <intent-filter>
@@ -36,8 +34,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Register"
-            android:exported="true">
+            android:name=".RegisterActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -66,10 +64,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="false">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="mh06df2rc9" />
