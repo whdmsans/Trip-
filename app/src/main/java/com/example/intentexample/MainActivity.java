@@ -13,9 +13,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView; // 바텀 네비게이션 뷰
     private FragmentManager fm;
     private FragmentTransaction ft;
-    private Calendar calendar;
+    private Gallery calendar;
     private Home home;
     private Friends friends;
 
@@ -113,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // 각 화면 연결
-        calendar = new Calendar();
+        calendar = new Gallery();
         home = new Home();
         friends = new Friends();
         setFrag(1); // 첫 화면을 선택

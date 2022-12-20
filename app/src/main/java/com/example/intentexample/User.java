@@ -8,15 +8,25 @@ public class User {
     String name;
     String email;
     String uid;
+    String imageUri;
 
     public User() {
     }
 
-    public User(String profile, String name, String email, String uid) {
+    public User(String profile, String name, String email, String uid, String imageUri) {
         this.profile = profile;
         this.name = name;
         this.email = email;
         this.uid = uid;
+        this.imageUri = imageUri;
+    }
+
+    public String getImageUri() {
+        return imageUri;
+    }
+
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
     }
 
     public String getProfile() {
