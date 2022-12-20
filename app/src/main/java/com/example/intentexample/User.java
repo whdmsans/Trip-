@@ -1,21 +1,22 @@
 package com.example.intentexample;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class User {
+    String profile;
+    String name;
+    String email;
+    String uid;
 
-    private String idToken;
-    private String profile;
-    private String userName;
-    private String emailId;
-    private String password;
-
-    public User() { }
-
-    public String getIdToken() {
-        return idToken;
+    public User() {
     }
 
-    public void setIdToken(String idToken) {
-        this.idToken = idToken;
+    public User(String profile, String name, String email, String uid) {
+        this.profile = profile;
+        this.name = name;
+        this.email = email;
+        this.uid = uid;
     }
 
     public String getProfile() {
@@ -26,27 +27,37 @@ public class User {
         this.profile = profile;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEmailId() {
-        return emailId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUid() {
+        return uid;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("uid", uid);
+        result.put("email", email);
+        result.put("name", name);
+        result.put("profile", profile);
+
+        return result;
     }
 }
