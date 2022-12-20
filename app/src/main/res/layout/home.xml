@@ -6,11 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Home">
 
-    <!--지도-->
-    <fragment
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/map"
-        android:name="com.naver.maps.map.MapFragment" />
+        android:layout_height="650dp">
+
+        <!--지도-->
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            android:name="com.naver.maps.map.MapFragment" />
+
+    </LinearLayout>
 
 </FrameLayout>
