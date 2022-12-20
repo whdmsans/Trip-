@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                           Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                          intent.putExtra("userEmail", strEmail);
                           startActivity(intent);
                           finish();
                         } else {

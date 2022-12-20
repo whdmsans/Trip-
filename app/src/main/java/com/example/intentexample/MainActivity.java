@@ -139,11 +139,11 @@ public class MainActivity extends AppCompatActivity {
             tv_email = findViewById(R.id.userEmail);
 
             Intent intent = getIntent();
-            String userID = intent.getStringExtra("userID");
+            String userID = intent.getStringExtra("strEmail");
             String userEmail = intent.getStringExtra("userEmail");
 
-            tv_id.setText(userID);
-//            tv_email.setText(userEmail);
+//            tv_id.setText(userID);
+            tv_email.setText(userEmail);
         }
 
         @Override

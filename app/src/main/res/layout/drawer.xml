@@ -21,7 +21,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
-        android:src="@drawable/ic_baseline_person_24"
+        android:src="@drawable/user"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="username"
+        android:text="test"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="@+id/userPicture"
         app:layout_constraintTop_toBottomOf="@+id/userPicture" />
